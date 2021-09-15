@@ -1,6 +1,5 @@
 package com.newton.aaw.hr.controller;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
