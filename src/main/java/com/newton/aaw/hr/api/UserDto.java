@@ -3,6 +3,9 @@ package com.newton.aaw.hr.api;
 import java.time.LocalDateTime;
 
 import com.newton.aaw.hr.domain.entity.User;
+import com.newton.aaw.hr.domain.entity.enums.Status;
+import com.newton.aaw.hr.domain.entity.enums.Role;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,14 +31,11 @@ public class UserDto {
 	private LocalDateTime createdAt;
 	
 	private LocalDateTime modifiedAt;
-
-	private enum status {
-		INACTIVE, ACTIVE, BLOCKED
-    };
-
-    private enum role {
-        ADMIN, READ, MODIFY
-    }
+	
+	private Role role;
+	
+	private Status status;
+	
 	
 	// construtor Entidade para DTO
 	public UserDto(User u) {

@@ -37,7 +37,7 @@ public class EmployeeService {
 		var existing = get(id);
 
 		// update
-		existing.setName(u.getName());
+		existing.setName(u.getFirstName());
 		existing.setPassword(u.getPassword());
 		existing.setEmail(u.getEmail());
 		existing.setMobile(u.getMobile());

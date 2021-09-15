@@ -1,5 +1,6 @@
 package com.newton.aaw.hr.controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employees")
-	public EmployeeDto create(@RequestBody employeeDto u) {
+	public EmployeeDto create(@RequestBody EmployeeDto u) {
 		var employee = new Employee(u);
 		
 		employee = employeeService.create(employee);
@@ -61,7 +62,7 @@ public class EmployeeController {
 
 		employee = employeeService.update(id, employee);
 		
-		return new employeeDto(employee);
+		return new EmployeeDto(employee);
 	}
 	
 	@DeleteMapping("/employees/{id}")

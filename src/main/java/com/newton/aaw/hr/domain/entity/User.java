@@ -1,6 +1,8 @@
 package com.newton.aaw.hr.domain.entity;
 
 import java.time.LocalDateTime;
+import com.newton.aaw.hr.domain.entity.enums.Status;
+import com.newton.aaw.hr.domain.entity.enums.Role;
 
 import com.newton.aaw.hr.api.UserDto;
 
@@ -14,7 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
+	
 	private Integer id;
 	
 	private String name;
@@ -29,13 +31,9 @@ public class User {
 	
 	private LocalDateTime modifiedAt;
 	    
-    private enum status {
-		INACTIVE, ACTIVE, BLOCKED
-    };
-
-    private enum role {
-        ADMIN, READ, MODIFY
-    }
+    private Status status;
+		
+    private Role role;
 	
 	public User(UserDto userDto) {
 		this.id = userDto.getId();
@@ -45,6 +43,8 @@ public class User {
 		this.mobile = userDto.getMobile();
 		this.status = userDto.getStatus();
 		this.role = userDto.getRole();
+		this.createdAt = userDto.getCreatedAt();
+		this.modifiedAt = userDto.getModifiedAt();
 	}
 	
 }
