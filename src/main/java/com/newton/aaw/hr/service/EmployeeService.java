@@ -31,16 +31,24 @@ public class EmployeeService {
 	}
 	
 	// u - CRUD
-	public Employee update(Integer id, Employee u) {
+	public Employee update(Integer id, Employee e) {
 
 		// recuperar para validar se existe
 		var existing = get(id);
 
 		// update
-		existing.setName(u.getFirstName());
-		existing.setPassword(u.getPassword());
-		existing.setEmail(u.getEmail());
-		existing.setMobile(u.getMobile());
+		existing.setFirstName(e.getFirstName());
+		existing.setLastName(e.getLastName());
+		existing.setDateOfBirth(e.getDateOfBirth());
+		existing.setGender(e.getGender());
+		existing.setStartDate(e.getStartDate());
+		existing.setEndDate(e.getEndDate());
+		existing.setPosition(e.getPosition());
+		existing.setMonthlySalary(e.getMonthlySalary());
+		existing.setArea(e.getArea());
+		existing.setCreatedAt(e.getCreatedAt());
+		existing.setModifiedAt(e.getModifiedAt());
+	
 		
 		existing.setModifiedAt(LocalDateTime.now());
 
